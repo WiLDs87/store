@@ -4,7 +4,7 @@ services:
     build: .
     environment:
       NODE_ENV: development
-    command: node_modules/.bin/nodemon --exec npm start
+    command: npm run start:dev
     ports:
       - '3000:3000'
     tty: true
@@ -15,6 +15,8 @@ services:
       - /home/app/store/node_modules
   mongodb:
     image: mongo:4.2
+    volumes:
+      - 'data:/data/db'
     environment:
       MONGO_INITDB_DATABASE: ${DB_NAME}
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}

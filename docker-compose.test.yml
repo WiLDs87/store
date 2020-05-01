@@ -4,7 +4,7 @@ services:
     build: .
     environment:
       NODE_ENV: test
-    command: npm test
+    command: npm run test
     ports:
       - '3000:3000'
     tty: true
@@ -12,6 +12,8 @@ services:
       - mongodb
   mongodb:
     image: mongo:4.2
+    volumes:
+      - ./data/db
     environment:
       MONGO_INITDB_DATABASE: ${DB_NAME}
       MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
