@@ -1,5 +1,4 @@
-FROM node:14.1
-
+FROM node:12.16.3
 ENV HOME=/home/app
 
 RUN apt-get update && apt-get install htop
