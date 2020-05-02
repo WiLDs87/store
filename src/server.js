@@ -1,4 +1,4 @@
-import setupApp from './app.js';
+import setupApp from './app';
 
 const port = process.env.PORT || 3000;
 
@@ -17,7 +17,7 @@ const port = process.env.PORT || 3000;
             console.error(err);
             process.exit(1);
           }
-          app.database.connection.close(function() {
+          app.database.connection.close(() => {
             console.info('Database connection closed!');
             process.exit(0);
           });
@@ -28,5 +28,4 @@ const port = process.env.PORT || 3000;
     console.error(error);
     process.exit(1);
   }
-})()
-
+})();
