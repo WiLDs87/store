@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "start": "npm run build && node dist/server.js",
-    "start:heroku": "babel-node server.js",
+    "start:heroku": "babel src --out-dir dist && node dist/server.js",
     "start:dev": "node_modules/.bin/nodemon --exec node_modules/.bin/babel-node src/server.js --ignore __tests__",
     "test": "NODE_ENV=test jest",
     "lint": "eslint src --ext .js",
