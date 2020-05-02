@@ -5,12 +5,10 @@ dotenv.config({
   path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
 });
 
-const { DB_USER, DB_PASS, DB_HOST, DB_NAME } = process.env;
-
-const mongodbUrl = `mongodb://${DB_USER}:${DB_PASS}@${DB_HOST}/${DB_NAME}?authSource=admin`;
+const { MONGO_URL } = process.env;
 
 const connect = () =>
-  mongoose.connect(mongodbUrl, {
+  mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });

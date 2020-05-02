@@ -15,6 +15,20 @@
 
 ---
 
+### How to run:
+
+##### dotenv
+  APP_SECRET
+  DB_USER
+  DB_PASS
+  DB_NAME
+  MONGO_URL
+
+##### Docker
+to dev: docker-compose -f docker-compose.development.yml up
+to test: docker-compose -f docker-compose.test.yml up
+
+
 ## Routes
 
 #### (POST) /users/authenticate
