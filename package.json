@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "12.16.3",
+    "npm": "6.14.4"
+  },
   "scripts": {
     "build": "babel src --out-dir dist",
-    "start": "npm run build && node dist/server.js",
+    "start": "npm run build && node ./dist/server.js",
     "start:heroku": "babel src --out-dir dist && node dist/server.js",
     "start:dev": "node_modules/.bin/nodemon --exec node_modules/.bin/babel-node src/server.js --ignore __tests__",
     "test": "NODE_ENV=test jest",
