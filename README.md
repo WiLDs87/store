@@ -24,7 +24,7 @@
 
 #### (DELETE) /Products/:id remove a product
 #### (GET) /Products/:id return a product
-####(GET) /Products return a product list
+#### (GET) /Products return a product list
   ##### body:
     name: string (optional)
     limit: number (optional)
