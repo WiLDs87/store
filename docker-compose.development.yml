@@ -1,0 +1,25 @@
+version: '2'
+services:
+  app:
+    build: .
+    environment:
+      NODE_ENV: development
+    command: npm run start:dev
+    ports:
+      - '3000:3000'
+    tty: true
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/home/app/store
+      - /home/app/store/node_modules
+  mongodb:
+    image: mongo:4.2
+    volumes:
+      - ./data/db
+    environment:
+      MONGO_INITDB_DATABASE: ${DB_NAME}
+      MONGO_INITDB_ROOT_USERNAME: ${DB_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${DB_PASS}
+    ports:
+      - '27017:27017'

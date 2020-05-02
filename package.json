@@ -1,0 +1,47 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "start": "npm run build && node dist/server.js",
+    "start:dev": "node_modules/.bin/nodemon --exec node_modules/.bin/babel-node src/server.js --ignore __tests__",
+    "test": "NODE_ENV=test jest",
+    "lint": "eslint src --ext .js",
+    "lint:fix": "eslint src --fix --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WiLDs87/store.git"
+  },
+  "author": "william.silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WiLDs87/store/issues"
+  },
+  "homepage": "https://github.com/WiLDs87/store#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-acl": "^2.0.8",
+    "express-validator": "^6.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.5.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^10.0.0",
+    "jest": "^25.5.2",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2",
+    "prettier": "^1.19.1"
+  }
+}
